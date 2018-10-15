@@ -21,21 +21,6 @@ gulp.task('generateNuxt', [], function(callback) {
     callback(0);
   });
 });
-gulp.task('less', [], function() {
-  return gulp.src('./src/less/bootstrap.less')
-    .pipe(less())
-    .pipe(autoprefix({
-      browsers: ['last 1 version']
-    }))
-    .pipe(gulp.dest('./dist/css/'))
-});
-gulp.task('watch', ['compileReact', 'compileVue'], function() {
-  gulp.watch('./src/jsx/**/*.jsx', ['compileReact']);
-  gulp.watch('./src/nuxt/**/*.vue', ['compileVue']);
-});
-gulp.task('lessWatch', ['less'], function() {
-  gulp.watch('./src/less/*', ['less']);
-});
 gulp.task('webserver', function() {
   gulp.src('./dist')
     .pipe(webserver({
@@ -43,4 +28,3 @@ gulp.task('webserver', function() {
       fallback: 'index.html'
     }));
 });
-gulp.task('develop', ['watch', 'webserver', 'lessWatch']);
