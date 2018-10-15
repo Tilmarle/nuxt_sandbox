@@ -1,0 +1,36 @@
+{
+  "name": "my-nuxt-app2",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": " <>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "child_process": "^1.0.2",
+    "envify": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-less": "^4.0.1",
+    "gulp-webserver": "^0.9.1",
+    "nuxt": "^2.0.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "vueify": "^9.4.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
