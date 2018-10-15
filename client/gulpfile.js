@@ -21,6 +21,12 @@ gulp.task('generateNuxt', [], function(callback) {
     callback(0);
   });
 });
+gulp.task('watch', ['generateNuxt'], function() {
+  gulp.watch('./src/nuxt/**/*.vue', ['generateNuxt']);
+});
+gulp.task('lessWatch', ['less'], function() {
+  gulp.watch('./src/less/*', ['less']);
+});
 gulp.task('webserver', function() {
   gulp.src('./dist')
     .pipe(webserver({
@@ -28,3 +34,4 @@ gulp.task('webserver', function() {
       fallback: 'index.html'
     }));
 });
+gulp.task('develop', ['watch', 'webserver']);

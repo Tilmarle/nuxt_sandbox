@@ -1,8 +1,9 @@
+const webpack = require('webpack')
+
 module.exports = {
   /*
   ** Headers of the page
   */
-  mode: 'spa',
   head: {
     title: 'my-nuxt-app2',
     meta: [
@@ -34,10 +35,21 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    vendor: ['jquery', 'bootstrap'],
+    plugins: [
+      // set shortcuts as global for bootstrap
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        Popper: ['popper.js', 'default'],
+      })
+    ]
   },
-  generate: {
-    minify: {collapseWhitespace: true}
-  }
+  // include bootstrap css
+  css: ['~static/css/bootstrap.css'],
+  // include bootstrap js on startup
+  plugins: ['~plugins/bootstrap.js']
 }
 
